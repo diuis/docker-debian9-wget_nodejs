@@ -1,9 +1,9 @@
 FROM diuis/docker-debian9-wget:v1.0.4
 
 RUN mkdir /usr/local/lib/nodejs && \
-    wget -nv https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.xz -O /usr/local/lib/nodejs/node-10.14.2-linux-x64.tar.xz && \
-    tar xf /usr/local/lib/nodejs/node-10.14.2-linux-x64.tar.xz -C /usr/local/lib/nodejs && \
-    rm /usr/local/lib/nodejs/node-10.14.2-linux-x64.tar.xz && \
+    wget -nv https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.xz -O /usr/local/lib/nodejs/node-10.14.2-linux-x64.txz && \
+    tar xf /usr/local/lib/nodejs/node-10.14.2-linux-x64.txz -C /usr/local/lib/nodejs && \
+    rm /usr/local/lib/nodejs/node-10.14.2-linux-x64.txz && \
     mv /usr/local/lib/nodejs/node-10.14.2-linux-x64 /usr/local/lib/nodejs/node-10.14.2
 
 # RUN apt-get update && \
