@@ -1,4 +1,4 @@
-FROM diuis/docker-debian9-wget:v1.0.4
+FROM diuis/docker-debian9-wget:v1.0.0
 
 RUN mkdir /usr/local/lib/nodejs && \
     wget -nv https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.gz -O /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz && \
