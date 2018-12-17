@@ -1,11 +1,12 @@
 FROM diuis/docker-debian9-wget:v1.0.0
 
+ARG NODEJS_ARCHIVE=https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.gz
+
 RUN mkdir /usr/local/lib/nodejs && \
-    wget -nv https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.gz -O /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz && \
-    tar xf /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz -C /usr/local/lib/nodejs && \
-    rm /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz && \
-    mv /usr/local/lib/nodejs/node-v10.14.2-linux-x64 /usr/local/lib/nodejs/node-10.14.2 && \
-    ln -s /usr/local/lib/nodejs/node-10.14.2 /usr/local/lib/nodejs/node
+    wget -nv ${NODEJS_ARCHIVE} -O /usr/local/lib/nodejs/node.tar.gz && \
+    tar xf /usr/local/lib/nodejs/node.tar.gz -C /usr/local/lib/nodejs --strip-components 1 && \
+    rm /usr/local/lib/nodejs/node.tar.gz && \
+    echo "export PATH=/usr/local/lib/nodejs/bin:$PATH" >> /etc/profile.d/nodejs-export-path.sh
 
 # RUN apt-get update && \
 #     wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
