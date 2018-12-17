@@ -4,7 +4,8 @@ RUN mkdir /usr/local/lib/nodejs && \
     wget -nv https://nodejs.org/dist/v10.14.2/node-v10.14.2-linux-x64.tar.gz -O /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz && \
     tar xf /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz -C /usr/local/lib/nodejs && \
     rm /usr/local/lib/nodejs/node-v10.14.2-linux-x64.tar.gz && \
-    mv /usr/local/lib/nodejs/node-v10.14.2-linux-x64 /usr/local/lib/nodejs/node-10.14.2
+    mv /usr/local/lib/nodejs/node-v10.14.2-linux-x64 /usr/local/lib/nodejs/node-10.14.2 && \
+    ln -s /usr/local/lib/nodejs/node-10.14.2 /usr/local/lib/nodejs/node
 
 # RUN apt-get update && \
 #     wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
