@@ -9,7 +9,7 @@ services:
 
 env:
   global:
-    - IMAGE_NAME=diuis/docker-debian9-wget_nodejs
+    - IMAGE_NAME=diuis/docker-ubuntu-wget_nodejs
 
 script:
   - docker build . -t "$IMAGE_NAME"
