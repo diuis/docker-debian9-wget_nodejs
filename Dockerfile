@@ -1,4 +1,4 @@
-FROM diuis/docker-ubuntu-wget:v1.0.1
+FROM diuis/docker-ubuntu-wget:18.10
 
 ARG NODEJS_ARCHIVE=https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.gz
 
